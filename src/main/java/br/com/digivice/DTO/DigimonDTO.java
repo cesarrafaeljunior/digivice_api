@@ -1,6 +1,6 @@
-package RequestDigimons;
+package br.com.digivice.DTO;
 
-public class ResultDigimons {
+public class DigimonDTO {
 
     private String name;
     private String img;
