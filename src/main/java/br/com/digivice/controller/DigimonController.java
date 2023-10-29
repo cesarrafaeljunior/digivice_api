@@ -25,11 +25,11 @@ public class DigimonController {
 
     @GetMapping("/digimons")
     public ResponseEntity<List<DigimonDTO>> getDigimons(@RequestParam(required = false) String name, @RequestParam(required = false) String level){
-            if (name != null) {
+            if (name != null && !name.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.OK).body(digimonService.getDigimonsByName(name));
             }
 
-            if (level != null) {
+            if (level != null && !level.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.OK).body(digimonService.getDigimonsByLevel(level));
             }
 
