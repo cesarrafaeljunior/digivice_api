@@ -1,4 +1,4 @@
-package br.com.digivice.exceptions;
+package br.com.digivice.exceptions.errors;
 
 import org.springframework.http.HttpStatusCode;
 
