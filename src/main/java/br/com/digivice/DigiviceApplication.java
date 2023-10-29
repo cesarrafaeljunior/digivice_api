@@ -9,6 +9,5 @@ public class DigiviceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DigiviceApplication.class, args);
-
 	}
 }
