@@ -1,24 +1,60 @@
-package service;
+package br.com.digivice.service;
 
-import DTO.DigimonDTO;
+import br.com.digivice.DTO.DigimonDTO;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 @Service
 public class DigimonService {
-    String urlExternApi = "https://digimon-api.vercel.app/api/digimon";
 
-    @GetMapping("/digimons")
-    public List<DigimonDTO> getDigimon(){
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<List<DigimonDTO>> response =  restTemplate.exchange(this.urlExternApi, HttpMethod.GET, null, new ParameterizedTypeReference<List<DigimonDTO>>() {});
-        return response.getBody();
+    private RestTemplate restTemplate;
+    String urlExternalApi = "https://digimon-api.vercel.app/api/digimon";
+    String auxUrlApi = this.urlExternalApi;
+
+    public DigimonService(){
+        this.restTemplate = new RestTemplate();
+    }
+    public List<DigimonDTO> getAllDigimons(){
+        return this.requestToExternalApi(this.urlExternalApi);
+    }
+
+    public List<DigimonDTO> getDigimonsByName(String name){
+
+        String concatString = "/name/";
+
+        this.urlExternalApi = this.urlExternalApi + concatString + name;
+
+        return this.requestToExternalApi(this.urlExternalApi);
+    }
+
+    public List<DigimonDTO> getDigimonsByLevel(String level){
+
+        String concatString = "/level/";
+
+        this.urlExternalApi = this.urlExternalApi + concatString + level;
+
+        return this.requestToExternalApi(this.urlExternalApi);
+    }
+
+    public List<DigimonDTO> requestToExternalApi(String url){
+            ResponseEntity<List<DigimonDTO>> response = this.restTemplate.exchange(
+                    this.urlExternalApi,
+                    HttpMethod.GET,
+                    null,
+                    new ParameterizedTypeReference<List<DigimonDTO>>() {
+                    }
+            );
+
+            this.urlExternalApi = auxUrlApi;
+
+            return response.getBody();
+
     }
 
 }
