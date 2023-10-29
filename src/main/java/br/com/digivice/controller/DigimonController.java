@@ -23,16 +23,15 @@ public class DigimonController {
 
     @GetMapping("/digimons")
     public List<DigimonDTO> getDigimons(@RequestParam(required = false) String name,@RequestParam(required = false) String level){
-
-        if(name != null && !name.isEmpty()){
-            System.out.println("Mudei a mensagem");
+        if(name != null){
             return digimonService.getDigimonsByName(name);
-        }else{
-            return digimonService.getAllDigimons();
         }
 
+        if(level != null){
+            return digimonService.getDigimonsByLevel(level);
+        }
+
+        return digimonService.getAllDigimons();
 
     }
-
-
 }
