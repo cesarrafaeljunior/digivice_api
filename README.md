@@ -184,7 +184,7 @@
 ###### digimon_by_level
 <h2 id="digimon_by_level">Buscar digimons por level</h2>
 
-<h2>Levels disponíveis</h2>
+<h2>Leveis disponíveis</h2>
 
 ###### levels
 
