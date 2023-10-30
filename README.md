@@ -167,7 +167,7 @@
 ###### digimon_not_name
 <h2 id="digimon_not_name">Buscar Digimon com nome não existente</h2>
 
-`GET /digimons?name=pikachu - FORMATO DE RESPOSTA- Status Code - 200`
+`GET /digimons?name=pikachu - FORMATO DE RESPOSTA- Status Code - 400`
 <P>Exemplo de resposta</p>
 
 ```json
@@ -229,7 +229,7 @@
 ###### not_levels
 <h2 id="not_level">Buscar Digimons com level não existente</h2>
 
-`GET /digimons?level=big - FORMATO DE RESPOSTA- Status Code - 200`
+`GET /digimons?level=big - FORMATO DE RESPOSTA- Status Code - 400`
 <P>Exemplo de resposta</p>
 
 ```json
