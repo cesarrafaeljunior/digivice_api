@@ -25,8 +25,8 @@
 
 <h2 id="local">Rodando localmente</h2>
 
-- <a href="#linha_comando">Por linha de comando</h2>
-- <a href="#docker">Utilizando o Docker</h2>
+- <a href="#linha_comando">Por linha de comando</a>
+- <a href="#docker">Utilizando o Docker</a>
 
 
 <h2 id="linha_comando">Por linha de comando</h2>
@@ -105,13 +105,13 @@
   - Local: http://localhost:8080/digimons
 
 ### Requests
-- <a href="#all_digimons">Buscar todos os digimons</h2>
-- <a href="#digimon_by_name">Buscar Digimon pelo nome</h2>
-- <a href="#digimon_not_name">Buscar digimon com nome não existente</h2>
-- <a href="#digimon_by_level">Buscar digimon por level</h2>
-- <a href="#levels">Leveis disponíveis</h2>
-- <a href="#not_levels">Buscar digimon com level não existente</h2>
-- <a href="#level_and_name">Buscar Digimon pelo level e nome</h2>
+- <a href="#all_digimons">Buscar todos os digimons</a>
+- <a href="#digimon_by_name">Buscar Digimon pelo nome</a>
+- <a href="#digimon_not_name">Buscar digimon com nome não existente</a>
+- <a href="#digimon_by_level">Buscar digimon por level</a>
+- <a href="#levels">Leveis disponíveis</a>
+- <a href="#not_levels">Buscar digimon com level não existente</a>
+- <a href="#level_and_name">Buscar Digimon pelo level e nome</a>
 
 ### Digimons
 
