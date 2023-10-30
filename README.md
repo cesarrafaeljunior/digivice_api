@@ -101,7 +101,7 @@
 <h2 id="doc">Documentação da api</h2>
 
 ## UrlsBase:
-  - Deploy:
+  - Deploy: https://digivice-api.onrender.com => A primeira requisição pode demorar ate 10 segundos!
   - Local: http://localhost:8080/digimons
 
 ### Requests
