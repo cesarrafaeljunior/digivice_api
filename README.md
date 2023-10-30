@@ -183,6 +183,7 @@
 
 ###### digimon_by_level
 <h2 id="digimon_by_level">Buscar digimons por level</h2>
+###### levels
 <h2 id="levels">Levels disponíveis</h2>
 - In Training
 - Rookie
@@ -222,7 +223,7 @@
 
 <hr>
 
-###### not_level
+###### not_levels
 <h2 id="not_level">Buscar Digimons com level não existente</h2>
 
 `GET /digimons?level=big - FORMATO DE RESPOSTA- Status Code - 200`
