@@ -56,7 +56,7 @@
     ```
     <hr>
   - Utilize o <a href="https://insomnia.rest/">Imsonia</a> ou qualquer outro software de chamadas HTTP para testar as rotas da API.
-  - <h4 id="doc">Documentação da api</h4>
+  - <a href="#doc">Documentação da api</a>
 
 
 <h2 id="docker">Utilizando o Docker</h2>
@@ -92,12 +92,11 @@
     ```
     <hr>
   - Utilize o <a href="https://insomnia.rest/">Imsonia</a> ou qualquer outro software de chamadas HTTP para testar as rotas da API.
-  - <h4 id="doc">Documentação da api</h4>
+  - <a href="#doc">Documentação da api</a>
 
 
 <hr>
 
-# doc
 <h2 id="doc">Documentação da api</h2>
 
 ## UrlsBase:
