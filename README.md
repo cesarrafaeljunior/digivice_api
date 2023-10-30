@@ -29,6 +29,7 @@
 - <a href="#docker" target="_blank">Utilizando o Docker</a>
 
 
+##### linha_comando
 <h2 id="linha_comando">Por linha de comando</h2>
 
 - Requisitos: É preciso ter o Maven e o JDK na versão 17 ou maior, instalados e configurados no sistema. 
@@ -58,7 +59,7 @@
   - Utilize o <a href="https://insomnia.rest/">Imsonia</a> ou qualquer outro software de chamadas HTTP para testar as rotas da API.
   - <a href="#doc">Documentação da api</a>
 
-
+##### docker
 <h2 id="docker">Utilizando o Docker</h2>
 - Requisitos: É preciso ter o Docker e o Maven instaladso e configurados no sistema. 
 
