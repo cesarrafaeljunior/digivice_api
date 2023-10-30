@@ -26,7 +26,7 @@
 <h2 id="local">Rodando localmente</h2>
 
 - <a href="#linha_comando">Por linha de comando</a>
-- <a href="#docker">Utilizando o Docker</a>
+- <a href="#docker" target="_blank">Utilizando o Docker</a>
 
 
 <h2 id="linha_comando">Por linha de comando</h2>
