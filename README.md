@@ -4,11 +4,16 @@
 
 <p> A Digivice API é uma ferramenta que permite acessar informações sobre Digimons. Ela se integra a uma fonte externa de dados sobre essas criaturas digitais e oferece a flexibilidade de filtrar os resultados com base em critérios como nome e nível. Isso torna a consulta de informações sobre Digimons mais fácil e personalizável para atender às suas necessidades específicas.</p>
 
+#### Tecnologias utilizadas:
+ - Java 17.0.6
+ - Spring Boot 3.1.5
+ - Maven
+
 ### Tópicos
 
 - [Api Deploy](#api-deploy)
 - [Rodando localmente](#rodando-a-api-localmente) 
-- [Doc da API](#doc-da-api)
+- [Doc da API](#documentacao-da-api)
 
 <hr>
 
@@ -97,224 +102,144 @@
   - Deploy:
   - Local: http://localhost:8080/digimons
 
-### Usuários
+### Requests
 
-#### Criação de usuário
+- [Buscar todos os digimons](#buscar-todos-os-digimons)
+- [Buscar Digimon pelo nome](#buscar-digimon-pelo-nome)
+- [Buscar digimon com nome não existente](#buscar-digimon-com-nome-nao-existente)
+- [Buscar digimon por level](#buscar-digimon-por-level)
+- [Leveis disponíveis](#leveis-disponiveis)
+- [Buscar digimon com level não existente](#buscar-digimon-com-level-nao-existente)
+- [Buscar Digimon pelo level e nome](#buscar-digimon-pelo-level-e-nome)
 
-`POST /user - FORMATO DE REQUISIÇÃO`
+### Digimons
 
-<p>Exemplo de requisição</p>
+#### Buscar todos os Digimons
+
+`GET /digimons - FORMATO DE RESPOSTA- Status Code - 200`
+<P>Exemplo de resposta</p>
 
 ```json
-
-{
-	"name": "teste",
-	"email":"teste@gmail.com",
-	"password": "123456789",
-}
+[
+   {
+     "name": "Koromon",
+     "img": "https://digimon.shadowsmith.com/img/koromon.jpg",
+     "level": "In Training"
+   },
+   {
+     "name": "Tsunomon",
+     "img": "https://digimon.shadowsmith.com/img/tsunomon.jpg",
+     "level": "In Training"
+   },
+   {
+     "name": "Yokomon",
+     "img": "https://digimon.shadowsmith.com/img/yokomon.jpg",
+     "level": "In Training"
+   },
+]
 ```
 
-`POST /user - FORMATO DE RESPOSTA- Status Code - 201`
+<hr>
+
+#### Buscar Digimon pelo nome
+
+`GET /digimons?name=Koromon - FORMATO DE RESPOSTA- Status Code - 200`
+<P>Exemplo de resposta</p>
+
+```json
+[
+   {
+     "name": "Koromon",
+     "img": "https://digimon.shadowsmith.com/img/koromon.jpg",
+     "level": "In Training"
+   }
+]
+```
+
+<hr>
+
+#### Buscar Digimon com nome não existente
+
+`GET /digimons?name=pikachu - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
 
 ```json
 {
-	"name": "teste",
-	"email":"teste@gmail.com",
-	"id": 1,
-	"createdAt": "2023-03-24T16:22:47.649Z"
+   "timestamp": "2023-10-30T03:10:02.850076Z",
+   "status": "BAD_REQUEST",
+   "error": "Pikachu is not a Digimon in our database.",
+   "path": "/digimons"
 }
 ```
 
 <hr>
 
-#### Buscar todos os usuários cadastrados
-
-`GET /user - FORMATO DE RESPOSTA- Status Code - 200`
+#### Buscar digimon por level
+##### Leveis disponíveis
+- In Training
+- Rookie
+- Champion
+- Ultimate
+- Fresh
+- Mega
+- Armor
+  
+`GET /digimons?level=armor - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
 
 ```json
-[{
-	"name": "teste",
-	"email":"teste@gmail.com",
-	"id": 1,
-	"createdAt": "2023-03-24T16:22:47.649Z"
-}]
+[
+   {
+     "name": "Flamedramon",
+     "img": "https://digimon.shadowsmith.com/img/flamedramon.jpg",
+     "level": "Armor"
+   },
+   {
+     "name": "Raidramon",
+     "img": "https://digimon.shadowsmith.com/img/raidramon.jpg",
+     "level": "Armor"
+   },
+   {
+     "name": "Magnamon",
+     "img": "https://digimon.shadowsmith.com/img/magnamon.jpg",
+     "level": "Armor"
+   },
+   {
+     "name": "Sethmon",
+     "img": "https://digimon.shadowsmith.com/img/sethmon.jpg",
+     "level": "Armor"
+   },
+]
 ```
 
 <hr>
 
-#### Login de usuário
+#### Buscar Digimon com level não existente
 
-`POST /login - FORMATO DE REQUISIÇÃO`
-
-<p>Exemplo de requisição</p>
-
-```json
-
-{
-	"email": "teste",
-	"password": "12345678"
-}
-```
-
-`POST /login - FORMATO DE RESPOSTA- Status Code - 200`
+`GET /digimons?level=big - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
 
 ```json
 {
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlc2FyIiwiaWF0IjoxNjc5OTMxNjU2LCJleHAiOjE2ODAwMTgwNTYsInN1YiI6ImE5ZTVkNzdlLTZmYjAtNDMwYS1iZDM0LTlmYjJlOTM5NGJkNSJ9.Wc4YnRRrmoyoKVWCRxC6C58E2qRi_DCqJOPDnf53BZE"
+   "timestamp": "2023-10-30T03:14:34.160189300Z",
+   "status": "BAD_REQUEST",
+   "error": "Big is not a level in our database.",
+   "path": "/digimons"
 }
 ```
 
-<hr>
+#### Buscar Digimon pelo level e nome
 
-## Rotas que precisam de autenticação:
-
-
-### User
-#### Buscar usuário logado
-`GET /user - FORMATO DE RESPOSTA- Status Code - 200`
+`GET /digimons?level=rookie&name=agumon - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
 
 ```json
-{
-	"name": "teste",
-	"email":"teste@gmail.com",
-	"id": 1,
-	"createdAt": "2023-03-24T16:22:47.649Z"
-}
-```
-
-<hr>
-
-
-### Produtos
-
-#### Cadastrar novo produto:
-
-`POST /product - FORMATO DE REQUISIÇÃO`
-
-<p>Exemplo de requisição</p>
-
-```json
-
-{
-    "name": "Big-Burguer",
-    "description": "O melhor lanche da casa!",
-    "price": 22,
-    "stock": 23,
-    "category":{
-        "name": "Lanches"
-    }
-}
-```
-
-`POST /product - FORMATO DE RESPOSTA- Status Code - 201`
-<P>Exemplo de resposta</p>
-
-```json
-{
-	"name": "Big-Burguer",
-	"description": "O melhor lanche da casa!",
-	"price": 22,
-	"stock": 23,
-	"category": {
-		"id": 1,
-		"name": "lanches"
-	},
-	"id": 1,
-	"createdAt": "2023-10-02T23:49:53.319Z",
-	"updatedAt": "2023-10-02T23:49:53.319Z"
-}
-```
-
-<hr>
-
-### Buscar todos os produtos:
-
-`GET /product - FORMATO DE RESPOSTA- Status Code - 200`
-<P>Exemplo de resposta</p>
-
-```json
-[{
-	"name": "Big-Burguer",
-	"description": "O melhor lanche da casa!",
-	"price": 22,
-	"stock": 23,
-	"category": {
-		"id": 1,
-		"name": "lanches"
-	},
-	"id": 1,
-	"createdAt": "2023-10-02T23:49:53.319Z",
-	"updatedAt": "2023-10-02T23:49:53.319Z"
-}]
-```
-
-<hr>
-
-### Buscar um produto pelo id:
-
-`GET /product/1 - FORMATO DE RESPOSTA- Status Code - 200`
-<P>Exemplo de resposta</p>
-
-```json
-[{
-	"name": "Big-Burguer",
-	"description": "O melhor lanche da casa!",
-	"price": 22,
-	"stock": 23,
-	"category": {
-		"id": 1,
-		"name": "lanches"
-	},
-	"id": 1,
-	"createdAt": "2023-10-02T23:49:53.319Z",
-	"updatedAt": "2023-10-02T23:49:53.319Z"
-}]
-```
-<hr>
-
-### Editar informações de um produto:
-
-`PATCH /product/id - FORMATO DE REQUISIÇÃO`
-<P>Exemplo de requisição</p>
-
-```json
-{
-	"name":"Big-Burguer editado",
-	"category": {
-		"name": "lanches"
-	}
-}
-```
-
-`PATCH /product/id - FORMATO DE RESPOSTA- Status Code - 200`
-<P>Exemplo de resposta</p>
-
-```json
-{
-	"name": "Big-Burguer editado",
-	"description": "Um hamburguersao muito dahora!",
-	"price": 22,
-	"stock": 23,
-	"category": {
-		"id": 9,
-		"name": "lanches"
-	},
-	"id": 18,
-	"createdAt": "2023-09-30T16:28:50.900Z",
-	"updatedAt": "2023-09-30T16:29:15.124Z"
-}
-```
-
-<hr>
-
-### Deletar um produto:
-
-`DELETE /product/id - FORMATO DE RESPOSTA- Status Code - 204`
-```json
-no body
+[
+   {
+     "name": "Agumon",
+     "img": "https://digimon.shadowsmith.com/img/agumon.jpg",
+     "level": "Rookie"
+   }
+]
 ```
 <hr>
