@@ -8,6 +8,7 @@
  - Java 17.0.6
  - Spring Boot 3.1.5
  - Maven
+ - IntelliJ
 
 ### Tópicos
 
