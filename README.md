@@ -11,24 +11,25 @@
 
 ### Tópicos
 
-- [Api Deploy](#api-deploy)
-- [Rodando localmente](#rodando-a-api-localmente) 
-- [Doc da API](#documentacao-da-api)
+- <a href="#deploy">Api deploy</a>
+- <a href="#local">Rodando localmente</a>
+- <a href="#doc">Documentação da api</a>
 
 <hr>
 
-## Api deploy
+<h2 id="deploy">Api Deploy</h2>
 
 - Você pode utilizar o seguinte link para testar a api: <a href="#">Link da api</a>
 
 <hr>
 
-# Rodando a api localmente
-- [Por linha de comando](#por-linha-de-comando)
-- [Utilizando o docker](#utilizando-o-docker)
+<h2 id="local">Rodando localmente</h2>
+
+- <a href="linha_comando">Por linha de comando</h2>
+- <a href="docker">Utilizando o Docker</h2>
 
 
-## Por linha de comando
+<h2 id="linha_comando">Por linha de comando</h2>
 
 - Requisitos: É preciso ter o Maven e o JDK na versão 17 ou maior, instalados e configurados no sistema. 
 
@@ -55,10 +56,10 @@
     ```
     <hr>
   - Utilize o <a href="https://insomnia.rest/">Imsonia</a> ou qualquer outro software de chamadas HTTP para testar as rotas da API.
-  - [Documentação da api](#documentacao-da-api)
+  - <h4 id="doc">Documentação da api</h4>
 
 
-## Utilizando o docker
+<h2 id="docker">Utilizando o Docker</h2>
 - Requisitos: É preciso ter o Docker e o Maven instaladso e configurados no sistema. 
 
 ### Clonando o repositório
@@ -91,30 +92,30 @@
     ```
     <hr>
   - Utilize o <a href="https://insomnia.rest/">Imsonia</a> ou qualquer outro software de chamadas HTTP para testar as rotas da API.
-  - [Documentação da api](#documentacao-da-api)
+  - <h4 id="doc">Documentação da api</h4>
 
 
 <hr>
 
-# Documentação da api
+# doc
+<h2 id="doc">Documentação da api</h2>
 
 ## UrlsBase:
   - Deploy:
   - Local: http://localhost:8080/digimons
 
 ### Requests
-
-- [Buscar todos os digimons](#buscar-todos-os-digimons)
-- [Buscar Digimon pelo nome](#buscar-digimon-pelo-nome)
-- [Buscar digimon com nome não existente](#buscar-digimon-com-nome-nao-existente)
-- [Buscar digimon por level](#buscar-digimon-por-level)
-- [Leveis disponíveis](#leveis-disponiveis)
-- [Buscar digimon com level não existente](#buscar-digimon-com-level-nao-existente)
-- [Buscar Digimon pelo level e nome](#buscar-digimon-pelo-level-e-nome)
+- <a href="all_digimons">Buscar todos os digimons</h2>
+- <a href="digimon_by_name">Buscar Digimon pelo nome</h2>
+- <a href="digimon_not_name">Buscar digimon com nome não existente</h2>
+- <a href="digimon_by_level">Buscar digimon por level</h2>
+- <a href="levels">Leveis disponíveis</h2>
+- <a href="not_levels">Buscar digimon com level não existente</h2>
+- <a href="level_and_name">Buscar Digimon pelo level e nome</h2>
 
 ### Digimons
 
-#### Buscar todos os Digimons
+<h2 id="all_digimons">Buscar todos os digimons</h2>
 
 `GET /digimons - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
@@ -141,7 +142,7 @@
 
 <hr>
 
-#### Buscar Digimon pelo nome
+<h2 id="digimon_by_name">Buscar Digimon pelo nome</h2>
 
 `GET /digimons?name=Koromon - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
@@ -158,7 +159,7 @@
 
 <hr>
 
-#### Buscar Digimon com nome não existente
+<h2 id="digimon_not_name">Buscar Digimon com nome não existente</h2>
 
 `GET /digimons?name=pikachu - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
@@ -174,8 +175,8 @@
 
 <hr>
 
-#### Buscar digimon por level
-##### Leveis disponíveis
+<h2 id="digimon_by_level">Buscar digimons por level</h2>
+<h2 id="levels">Levels disponíveis</h2>
 - In Training
 - Rookie
 - Champion
@@ -214,7 +215,7 @@
 
 <hr>
 
-#### Buscar Digimon com level não existente
+<h2 id="not_level">Buscar Digimons com level não existente</h2>
 
 `GET /digimons?level=big - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
@@ -228,7 +229,7 @@
 }
 ```
 
-#### Buscar Digimon pelo level e nome
+<h2 id="level_and_name">Buscar Digimon pelo level e nome</h2>
 
 `GET /digimons?level=rookie&name=agumon - FORMATO DE RESPOSTA- Status Code - 200`
 <P>Exemplo de resposta</p>
