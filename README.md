@@ -17,12 +17,14 @@
 
 <hr>
 
-<h2 id="deploy">Api Deploy</h2>
+###### deploy
+<h2>Api Deploy</h2>
 
 - Você pode utilizar o seguinte link para testar a api: <a href="#">Link da api</a>
 
 <hr>
 
+###### local
 <h2 id="local">Rodando localmente</h2>
 
 - <a href="#linha_comando">Por linha de comando</a>
@@ -30,7 +32,7 @@
 
 
 ##### linha_comando
-<h2 id="linha_comando">Por linha de comando</h2>
+<h2>Por linha de comando</h2>
 
 - Requisitos: É preciso ter o Maven e o JDK na versão 17 ou maior, instalados e configurados no sistema. 
 
@@ -60,7 +62,7 @@
   - <a href="#doc">Documentação da api</a>
 
 ##### docker
-<h2 id="docker">Utilizando o Docker</h2>
+<h2>Utilizando o Docker</h2>
 - Requisitos: É preciso ter o Docker e o Maven instaladso e configurados no sistema. 
 
 ### Clonando o repositório
@@ -98,6 +100,7 @@
 
 <hr>
 
+###### doc
 <h2 id="doc">Documentação da api</h2>
 
 ## UrlsBase:
