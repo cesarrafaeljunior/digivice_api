@@ -64,7 +64,7 @@
 
 ##### docker
 <h2>Utilizando o Docker</h2>
-- Requisitos: É preciso ter o Docker e o Maven instaladso e configurados no sistema. 
+- Requisitos: É preciso ter o Docker instalado e configurado no sistema. 
 
 ### Clonando o repositório
   - Faça o clone do seguinte repositório:
@@ -74,19 +74,15 @@
     
     ```
     <hr>
-  - Abra a pasta do diretório utilizando o terminal/IDE, estando na raiz do projeto rode o comando para compila o projeto:
-    ``` bash
     
-      mvn clean package
-    
-    ```
-    <hr>
   - Após a compilação, rode o seginte comando para buildar a imagem do projeto a partir das configurações do aquivo Dockerfile:
     ``` bash
     
        docker build -t myapp .
     
     ```
+    OBS: Este processo pode demorar alguns minutos.
+    
     <hr>
   - Suba um contâiner para rodar a imagem da aplicação utilizando o seguinte comando:
     ``` bash
