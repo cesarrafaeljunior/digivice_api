@@ -12,16 +12,8 @@
 
 ### Tópicos
 
-- <a href="#deploy">Api deploy</a>
 - <a href="#local">Rodando localmente</a>
 - <a href="#doc">Documentação da api</a>
-
-<hr>
-
-###### deploy
-<h2>Api Deploy</h2>
-
-- Você pode utilizar o seguinte link para testar a api: <a href="#">Link da api</a>
 
 <hr>
 
